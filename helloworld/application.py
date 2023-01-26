@@ -1,6 +1,6 @@
 #!flask/bin/python
 from flask import Flask, request, render_template
-from helloworld import playlist, songs,spotifycontroller
+from helloworld import playlist, songs
 from helloworld.flaskrun import flaskrun
 import os
 
@@ -18,7 +18,8 @@ app.register_blueprint(songs.bp)
 @app.route('/get-song', methods=['POST'])
 def get_song():
     search_term = request.form['song_name']
-    return spotifycontroller.get_song(search_term)
+    # return spotifycontroller.get_song(search_term)
+    return 'badbing badaboom'
 
 @app.route('/form')
 def renderform():
