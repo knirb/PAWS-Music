@@ -12,18 +12,18 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-# app.register_blueprint(playlist.bp)
-# app.register_blueprint(songs.bp)  
+app.register_blueprint(playlist.bp)
+app.register_blueprint(songs.bp)  
 
-# @app.route('/get-song', methods=['POST'])
-# def get_song():
-#     search_term = request.form['song_name']
-#     # return spotifycontroller.get_song(search_term)
-#     return 'badbing badaboom'
+@app.route('/get-song', methods=['POST'])
+def get_song():
+    search_term = request.form['song_name']
+    # return spotifycontroller.get_song(search_term)
+    return 'badbing badamoo'
 
-# @app.route('/form')
-# def renderform():
-#     return render_template('form.html')            
+@app.route('/form')
+def renderform():
+    return render_template('form.html')            
 
 if __name__ == '__main__':
     flaskrun(app)

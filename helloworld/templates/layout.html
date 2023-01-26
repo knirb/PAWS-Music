@@ -2,19 +2,28 @@
 <html>
   <head>
     <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
   </head>
   <body>
     <header>
       <div class="nav-container">
+        <a href="{{ url_for('home') }}">
+          <img src="../static/images/pawsLogo.svg" alt="Paws logo" />
+        </a>
         <h1 class="logo">PAWS</h1>
 
         <strong
           ><nav>
             <ul class="menu">
-              <li></li>
-              <li></li>
-            </ul></nav
-        ></strong>
+              <li>
+                <a href="{{ url_for('playlist.home') }}">Playlists</a>
+              </li>
+              <li>
+                <a href="{{ url_for('songs.home') }}">Songs</a>
+              </li>
+            </ul>
+          </nav></strong
+        >
       </div>
     </header>
     <div class="container">{% block content %} {% endblock %}</div>
