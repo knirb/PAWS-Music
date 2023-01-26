@@ -2,3 +2,4 @@ dist
 .eggs
 build
 helloworld.egg-info
+venv
