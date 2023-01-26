@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-import awscontroller
+from helloworld import awscontroller
 bp = Blueprint('playlist', __name__, url_prefix='/playlist')
 import string
 import random    
