@@ -9,20 +9,8 @@ import awscontroller
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def get():
-    return Response(json.dumps({'Output': 'Hello Worldddd'}), mimetype='application/json', status=200)
-
-@app.route('/', methods=['POST'])
-def post():
-    return Response(json.dumps({'Output': 'Hello World'}), mimetype='application/json', status=200) 
-
-@app.route('/', methods=['GET'])
 def home():
     return render_template('home.html')
-
-@app.route('/playlists/')
-def playlists():
-    return render_template('playlists.html')
 
 app.register_blueprint(playlist.bp)
 app.register_blueprint(songs.bp)

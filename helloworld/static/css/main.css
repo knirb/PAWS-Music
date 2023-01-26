@@ -46,3 +46,9 @@ a {
 li {
   list-style: none;
 }
+
+.playlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

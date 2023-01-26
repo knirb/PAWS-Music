@@ -9,7 +9,12 @@
   <body>
     {% for playlist in res.Items %} {% if playlist.Title %}
     <h3>{{playlist.Title.S}}</h3>
-    {% if playlist.Songs %} {% for song in playlist.Songs %} {{ playlist.Songs }} {% endfor %} {%
-    endif %} {% endif %} {% endfor %}
+    {% if playlist.Songs %} {% for song in playlist.Songs %} {{ playlist.Songs
+    }} {% endfor %} {% endif %} {% endif %} {% endfor %} {% extends
+    "layout.html" %} {% block content %}
+    <div class="playlist">
+      <p>Hi, this is playlist section</p>
+    </div>
+    {% endblock %}
   </body>
 </html>
