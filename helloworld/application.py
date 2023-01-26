@@ -2,6 +2,7 @@
 import json
 from flask import Flask, Response, render_template
 import playlist
+import songs
 from helloworld.flaskrun import flaskrun
 import awscontroller
 
@@ -24,6 +25,7 @@ def playlists():
     return render_template('playlists.html')
 
 app.register_blueprint(playlist.bp)
+app.register_blueprint(songs.bp)
 
 @app.route('/get-songs', methods=['GET'])
 def get_songs():

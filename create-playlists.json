@@ -1,14 +1,7 @@
 {
   "TableName": "Playlists",
-  "KeySchema": [
-    { "AttributeName": "PlaylistID", "KeyType": "HASH" },
-    { "AttributeName": "SongTitle", "KeyType": "RANGE" }
-  ],
-  "AttributeDefinitions": [
-    { "AttributeName": "PlaylistID", "AttributeType": "S" },
-    { "AttributeName": "Artist", "AttributeType": "S" },
-    { "AttributeName": "SongTitle", "AttributeType": "S" }
-  ],
+  "KeySchema": [{ "AttributeName": "PlaylistID", "KeyType": "HASH" }],
+  "AttributeDefinitions": [{ "AttributeName": "PlaylistID", "AttributeType": "S" }],
   "ProvisionedThroughput": {
     "ReadCapacityUnits": 5,
     "WriteCapacityUnits": 5

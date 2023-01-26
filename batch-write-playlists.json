@@ -1,0 +1,122 @@
+{
+  "Playlists": [
+    {
+      "PutRequest": {
+        "Item": {
+          "PlaylistID": {
+            "S": "PlaylistTest1"
+          },
+          "Title": {
+            "S": "Fet playlist"
+          },
+          "Songs": {
+            "L": [
+              {
+                "SongID": {
+                  "S": "123"
+                },
+                "Title": {
+                  "S": "Stockholmsvy"
+                },
+                "Artist": {
+                  "S": "Hannes ft. waterbaby"
+                },
+                "Link": {
+                  "S": "https://open.spotify.com/embed/track/3BeaiIXko9QV8689eWB6yd?utm_source=generator"
+                }
+              },
+              {
+                "SongID": {
+                  "S": "12345"
+                },
+                "Title": {
+                  "S": "Козаки йдуть"
+                },
+                "Artist": {
+                  "S": "PROBASS ∆ HARDI"
+                },
+                "Link": {
+                  "S": "https://open.spotify.com/embed/track/1xv3pOaCAkkQSvrOcdMoD8?utm_source=generator&theme=0"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PlaylistID": {
+            "S": "PlaylistTest2"
+          },
+          "Title": {
+            "S": "Eyooo playlisten dårå"
+          },
+          "Songs": {
+            "L": [
+              {
+                "SongID": {
+                  "S": "12345"
+                },
+                "Title": {
+                  "S": "Козаки йдуть"
+                },
+                "Artist": {
+                  "S": "PROBASS ∆ HARDI"
+                },
+                "Link": {
+                  "S": "https://open.spotify.com/embed/track/1xv3pOaCAkkQSvrOcdMoD8?utm_source=generator&theme=0"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "PlaylistID": {
+            "S": "PlaylistTest3"
+          },
+          "Title": {
+            "S": "Best list yaooo boiii"
+          },
+          "Songs": {
+            "L": [
+              {
+                "SongID": {
+                  "S": "123456"
+                },
+                "Title": {
+                  "S": "Save Some Room"
+                },
+                "Artist": {
+                  "S": "Shallou"
+                },
+                "Link": {
+                  "S": "https://open.spotify.com/embed/track/7FYEftcDTCjLkQZPAgPe0D?utm_source=generator"
+                }
+              },
+              {
+                "SongID": {
+                  "S": "1234"
+                },
+                "Title": {
+                  "S": "If (Nils Hoffman Remix)"
+                },
+                "Artist": {
+                  "S": "Niklas Paschburg"
+                },
+                "Link": {
+                  "S": "https://open.spotify.com/embed/track/45B3L5ctbj0vnJUpzwrSgC?utm_source=generator"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

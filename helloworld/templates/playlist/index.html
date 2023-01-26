@@ -7,6 +7,9 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Hej</h1>
+    {% for playlist in res.Items %} {% if playlist.Title %}
+    <h3>{{playlist.Title.S}}</h3>
+    {% if playlist.Songs %} {% for song in playlist.Songs %} {{ playlist.Songs }} {% endfor %} {%
+    endif %} {% endif %} {% endfor %}
   </body>
 </html>
