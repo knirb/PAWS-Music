@@ -1,35 +1,32 @@
-Welcome to the AWS CodeStar sample web service
-==============================================
+# Welcome to the AWS CodeStar sample web service
 
 This sample code helps get you started with a simple Flask web service
 deployed by AWS CodeDeploy and AWS CloudFormation to an Amazon EC2 server.
 
-What's Here
------------
+## What's Here
 
 This sample includes:
 
-* README.md - this file
-* appspec.yml - this file is used by AWS CodeDeploy when deploying the web
+- README.md - this file
+- appspec.yml - this file is used by AWS CodeDeploy when deploying the web
   application to EC2
-* buildspec.yml - this file is used by AWS CodeBuild to build and test
+- buildspec.yml - this file is used by AWS CodeBuild to build and test
   your application
-* requirements.txt - this file is used install Python dependencies needed by
+- requirements.txt - this file is used install Python dependencies needed by
   the Flask application
-* setup.py - this file is used by Python's setuptools library to describe how
+- setup.py - this file is used by Python's setuptools library to describe how
   your application will be packaged and installed
-* scripts/ - this directory contains scripts used by AWS CodeDeploy when
+- scripts/ - this directory contains scripts used by AWS CodeDeploy when
   installing and deploying your application on the Amazon EC2 instance
-* helloworld/ - this directory contains the Python source code for your Flask application
-* tests/ - this directory contains unit tests for your application
-* template.yml - this file contains the description of AWS resources used by AWS
+- helloworld/ - this directory contains the Python source code for your Flask application
+- tests/ - this directory contains unit tests for your application
+- template.yml - this file contains the description of AWS resources used by AWS
   CloudFormation to deploy your infrastructure
-* template-configuration.json - this file contains the project ARN with placeholders used for tagging resources with the project ID
+- template-configuration.json - this file contains the project ARN with placeholders used for tagging resources with the project ID
 
-Getting Started
----------------
+## Getting Started
 
-These directions assume you want to develop on your  your development environment or a Cloud9 environment, and not
+These directions assume you want to develop on your your development environment or a Cloud9 environment, and not
 from the Amazon EC2 instance itself. If you're on the Amazon EC2 instance, the
 virtual environment is already set up for you, and you can start working on the
 code.
@@ -37,34 +34,36 @@ code.
 To work on the sample code, you'll need to clone your project's repository to your
 local computer. If you haven't, do that first. You can find instructions in the AWS CodeStar user guide at https://docs.aws.amazon.com/codestar/latest/userguide/getting-started.html#clone-repo.
 
-1. Create a Python virtual environment for your Django project. This virtual
-   environment allows you to isolate this project and install any packages you
-   need without affecting the system Python installation. At the terminal, type
-   the following command:
+1.  Create a Python virtual environment for your Django project. This virtual
+    environment allows you to isolate this project and install any packages you
+    need without affecting the system Python installation. At the terminal, type
+    the following command:
 
-        $ virtualenv .venv
+         $ virtualenv .venv
 
-2. Activate the virtual environment:
+2.  Activate the virtual environment:
 
-        $ activate ./venv/bin/activate
+        Windows:
+          $ activate ./venv/bin/activate
+        Mac:
+          $ source ./venv/bin/activate
 
-3. Install Python dependencies for this project:
+3.  Install Python dependencies for this project:
 
         $ pip install -r requirements.txt
 
-4. Install the sample application code into your virtual environment:
+4.  Install the sample application code into your virtual environment:
 
         $ python setup.py install
 
-5. Start the Flask development server:
+5.  Start the Flask development server:
 
         $ python helloworld/application.py --port 8000
 
-6. Open http://127.0.0.1:8000/ in a web browser to view the output of your
-   service.
+6.  Open http://127.0.0.1:8000/ in a web browser to view the output of your
+    service.
 
-What Do I Do Next?
-------------------
+## What Do I Do Next?
 
 Once you have a virtual environment running, you can start making changes to
 the sample Flask web service. We suggest making a small change to
@@ -91,8 +90,7 @@ suggestions on our forum.
 User Guide: https://docs.aws.amazon.com/codestar/latest/userguide/welcome.html
 Forum: https://forums.aws.amazon.com/forum.jspa?forumID=248
 
-How Do I Add Template Resources to My Project?
-------------------
+## How Do I Add Template Resources to My Project?
 
 To add AWS resources to your project, you'll need to edit the `template.yml`
 file in your project's repository. You may also need to modify permissions for
@@ -102,8 +100,7 @@ and AWS CloudFormation provision the resources for you.
 See the AWS CodeStar user guide for instructions to modify your template:
 https://docs.aws.amazon.com/codestar/latest/userguide/how-to-change-project.html#customize-project-template
 
-What Should I Do Before Running My Project in Production?
-------------------
+## What Should I Do Before Running My Project in Production?
 
 AWS recommends you review the security best practices recommended by the framework
 author of your selected sample application before running it in production. You
