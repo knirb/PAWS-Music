@@ -1,0 +1,36 @@
+<html>
+   <body>
+      <form action = "http://127.0.0.1:8000/get-song" method = "post" onsubmit="getSong(event,this)">
+         <p>Enter Song:</p>
+         <p><input type = "text" name = "song_name" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+      
+      <iframe
+         style="border-radius: 12px"
+         src=""
+         class="spotify-iframe"
+         width="300px"
+         height="152"
+         frameborder="0"
+         allowfullscreen=""
+         allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+         loading="lazy"
+      ></iframe>
+   </body>
+</html>
+
+<script>
+   function getSong(e,form) {
+      fetch(form.action, {method:'post', body: new FormData(form)}).then(res=>res.text())
+      .then(function (data) {
+        const song = JSON.parse(data);
+        const spotifyIframe = document.createElement('iframe');
+        spotifyIframe.src = song.iframe_url;
+         
+        document.querySelector('.spotify-iframe').src = song.iframe_url;
+      });
+
+      e.preventDefault();
+   }
+</script>
