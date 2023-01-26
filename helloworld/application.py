@@ -21,9 +21,9 @@ def home():
 #     # return spotifycontroller.get_song(search_term)
 #     return 'badbing badaboom'
 
-@app.route('/form')
-def renderform():
-    return render_template('form.html')            
+# @app.route('/form')
+# def renderform():
+#     return render_template('form.html')            
 
 if __name__ == '__main__':
     flaskrun(app)
