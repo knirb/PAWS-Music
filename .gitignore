@@ -4,3 +4,5 @@ dist
 build
 helloworld.egg-info
 venv
+.cache
+.env

@@ -1,10 +1,12 @@
 #!flask/bin/python
-import json
-from flask import Flask, Response, render_template
+from flask import Flask, request, render_template
 import playlist
 import songs
 from helloworld.flaskrun import flaskrun
-import awscontroller
+import spotifycontroller
+import os
+
+print(os.getenv("SPOTIPY_CLIENT_ID"))
 
 app = Flask(__name__)
 
@@ -13,12 +15,16 @@ def home():
     return render_template('home.html')
 
 app.register_blueprint(playlist.bp)
-app.register_blueprint(songs.bp)
+app.register_blueprint(songs.bp)  
 
-@app.route('/get-songs', methods=['GET'])
-def get_songs():
-    return awscontroller.get_songs()
+@app.route('/get-song', methods=['POST'])
+def get_song():
+    search_term = request.form['song_name']
+    return spotifycontroller.get_song(search_term)
 
+@app.route('/form')
+def renderform():
+    return render_template('form.html')            
 
 if __name__ == '__main__':
     flaskrun(app)

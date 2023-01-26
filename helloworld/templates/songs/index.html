@@ -9,17 +9,17 @@
   <body>
     {% extends "layout.html" %} {% block content %}
     <div class="song-container">
-      {% for song in res.Items %}
+      {% for song in items %}
       <div class="song-wrapper">
         <div class="title">
-          <b>{{ song.Title.S}}</b>
-          <i>{{ song.Artist.S }}</i>
+          <b>{{ song.Title}}</b>
+          <i>{{ song.Artist }}</i>
         </div>
         {% if song.Link %}
         <div>
           <iframe
             style="border-radius: 12px"
-            src="{{song.Link.S}}"
+            src="{{song.Link}}"
             width="100%"
             height="152"
             frameborder="0"
