@@ -7,17 +7,17 @@
     <title>Document</title>
   </head>
   <body>
-    {% for song in res.Items %}
+    {% for song in items %}
     <div>
       <div>
-        <b>{{ song.Title.S}}</b>
-        <i>{{ song.Artist.S }}</i>
+        <b>{{ song.Title}}</b>
+        <i>{{ song.Artist }}</i>
       </div>
       {% if song.Link %}
       <div>
         <iframe
           style="border-radius: 12px"
-          src="{{song.Link.S}}"
+          src="{{song.Link}}"
           width="300px"
           height="152"
           frameborder="0"

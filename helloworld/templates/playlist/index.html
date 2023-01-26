@@ -7,9 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    {% for playlist in res.Items %} {% if playlist.Title %}
-    <h3>{{playlist.Title.S}}</h3>
-    {% if playlist.Songs %} {% for song in playlist.Songs %} {{ playlist.Songs }} {% endfor %} {%
-    endif %} {% endif %} {% endfor %}
+    {% for playlist in items %} {% if playlist.Title %}
+    <h3>{{playlist.Title}}</h3>
+
+    {% if playlist.Songs %} {% for song in playlist.Songs %} {{ song }} {% endfor %} {% endif %}
+    <div>
+      <a href="/playlist/{{playlist.PlaylistID}}">Edit playlist</a>
+    </div>
+    {% endif %} {% endfor %}
   </body>
 </html>
