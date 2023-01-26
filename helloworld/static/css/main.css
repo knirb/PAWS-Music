@@ -7,6 +7,11 @@
   src: url(./LibreFranklin-Light.ttf);
 }
 
+@font-face {
+  font-family: libre-bold;
+  src: url(./LibreFranklin-Bold.ttf);
+}
+
 body {
   color: black;
   font-family: libre-light;
@@ -45,4 +50,39 @@ a {
 
 li {
   list-style: none;
+}
+
+.playlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+}
+
+.song-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.song-wrapper {
+  margin: 10px;
+  width: 20%;
+  max-width: 400px;
+  flex: 1 0;
+  flex-basis: 50%;
+}
+
+@media (max-width: 800px) {
+  .song-wrapper {
+    flex-basis: 100%;
+    max-width: 350px;
+  }
+}
+
+.title {
+  margin-bottom: 5px;
 }

@@ -10,13 +10,20 @@
   <body>
     <header>
       <div class="nav-container">
-        <img src="../static/images/pawsLogo.svg" alt="Paws logo" />
+        <a href="{{ url_for('home') }}">
+          <img src="../static/images/pawsLogo.svg" alt="Paws logo" />
+        </a>
         <h1 class="logo">PAWS</h1>
+
         <strong
           ><nav>
             <ul class="menu">
-              <!-- <li><a href="{{ url_for('home') }}">Home</a></li> -->
-              <li><a href="{{ url_for('playlists') }}">Playlists</a></li>
+              <li>
+                <a href="{{ url_for('playlist.home') }}">Playlists</a>
+              </li>
+              <li>
+                <a href="{{ url_for('songs.home') }}">Songs</a>
+              </li>
             </ul>
           </nav></strong
         >

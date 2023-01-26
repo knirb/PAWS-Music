@@ -44,9 +44,9 @@ local computer. If you haven't, do that first. You can find instructions in the 
 2.  Activate the virtual environment:
 
         Windows:
-          $ activate ./venv/bin/activate
+          $ activate .venv/bin/activate
         Mac:
-          $ source ./venv/bin/activate
+          $ source .venv/bin/activate
 
 3.  Add env variables
     $ source .env
