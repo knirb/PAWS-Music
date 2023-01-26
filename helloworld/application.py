@@ -1,7 +1,6 @@
 #!flask/bin/python
 from flask import Flask, request, render_template
-import playlist
-import songs
+from helloworld import playlist, songs
 from helloworld.flaskrun import flaskrun
 import spotifycontroller
 import os
