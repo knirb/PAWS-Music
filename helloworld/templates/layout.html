@@ -2,10 +2,7 @@
 <html>
   <head>
     <title>Flask app</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/main.css') }}"
-    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
   </head>
   <body>
     <header>
@@ -18,15 +15,10 @@
         <strong
           ><nav>
             <ul class="menu">
-              <li>
-                <a href="{{ url_for('playlist.home') }}">Playlists</a>
-              </li>
-              <li>
-                <a href="{{ url_for('songs.home') }}">Songs</a>
-              </li>
-            </ul>
-          </nav></strong
-        >
+              <li></li>
+              <li></li>
+            </ul></nav
+        ></strong>
       </div>
     </header>
     <div class="container">{% block content %} {% endblock %}</div>
