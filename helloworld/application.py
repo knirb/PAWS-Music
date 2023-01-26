@@ -1,6 +1,6 @@
 #!flask/bin/python
 import json
-from flask import Flask, Response, jsonify
+from flask import Flask, Response
 from helloworld.flaskrun import flaskrun
 import awscontroller
 
