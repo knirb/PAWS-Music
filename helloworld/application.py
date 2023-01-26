@@ -1,8 +1,7 @@
 #!flask/bin/python
 from flask import Flask, request, render_template
-from helloworld import playlist, songs
+from helloworld import playlist, songs,spotifycontroller
 from helloworld.flaskrun import flaskrun
-import spotifycontroller
 import os
 
 print(os.getenv("SPOTIPY_CLIENT_ID"))
