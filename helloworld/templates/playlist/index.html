@@ -48,7 +48,7 @@
         </div>
          {% endif %}
         <div>
-          <a href="/playlist/{{playlist.PlaylistID}}">Edit playlist</a>
+          <a class='link' href="/playlist/{{playlist.PlaylistID}}">Edit playlist</a>
         </div>
         <div>
           <script defer>
@@ -56,12 +56,12 @@
 
             // Get all field data from the form
             // returns a FormData object
-            document.addEventListener("DOMContentLoaded", async () => {
-              await document
+            document.addEventListener("DOMContentLoaded", () => {
+              document
                 .getElementById("button-{{playlist.PlaylistID}}")
-                .addEventListener("click", (e) => {
+                .addEventListener("click", async (e) => {
                   e.preventDefault();
-                  fetch("/playlist/delete/{{playlist.PlaylistID}}", {
+                  await fetch("/playlist/delete/{{playlist.PlaylistID}}", {
                     method: "DELETE",
                   });
                   document

@@ -10,6 +10,10 @@ def home():
     items = awscontroller.get_playlists()['Items']
     return render_template('playlist/index.html', items = items)
 
+@bp.route('/delete/<id>', methods=['DELETE'])
+def delete_playlist(id):
+    print(id)
+    awscontroller.delete_playlist(id)
 
 @bp.route('/new', methods=['GET'])
 def new():
@@ -48,7 +52,3 @@ def add_song(playlistId):
     except:
         return render_template('500.html')
 
-@bp.route('/delete/<id>', methods=['DELETE'])
-def delete_playlist(id):
-    awscontroller.delete_playlist(id)
-    return Response(json.dumps({'Output': 'Kingen'}), mimetype='application/json', status=200)
