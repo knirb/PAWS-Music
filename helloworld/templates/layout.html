@@ -6,26 +6,92 @@
   </head>
   <body>
     <header>
-      <div class="nav-container">
-        <a href="{{ url_for('home') }}">
+      <section class="blob-container">
+        <div class="logo">
           <img src="../static/images/pawsLogo.svg" alt="Paws logo" />
-        </a>
-        <h1 class="logo">PAWS</h1>
+          <h1 class="h1">PAWS</h1>
+        </div>
+        <div class="blob">
+          <svg
+            viewBox="-70 0 800 600"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="100%"
+            id="blobSvg"
+          >
+            <g transform="translate(87, 13)">
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color: rgb(254, 0, 242)"></stop>
+                  <stop
+                    offset="100%"
+                    style="stop-color: rgb(251, 2, 128)"
+                  ></stop>
+                </linearGradient>
+              </defs>
+              <path fill="url(#gradient)">
+                <animate
+                  attributeName="d"
+                  dur="7000ms"
+                  repeatCount="indefinite"
+                  values="M401.5,314Q402,378,340,392.5Q278,407,209,424Q140,441,89,384Q38,327,55.5,256.5Q73,186,124,153Q175,120,233.5,66.5Q292,13,352,63.5Q412,114,406.5,182Q401,250,401.5,314Z;
 
-        <strong
-          ><nav>
-            <ul class="menu">
-              <li>
-                <a href="{{ url_for('playlist.home') }}">Playlists</a>
-              </li>
-              <li>
-                <a href="{{ url_for('songs.home') }}">Songs</a>
-              </li>
-            </ul>
-          </nav></strong
-        >
-      </div>
+                  M414,318.5Q414,387,348,408Q282,429,209.5,437.5Q137,446,112,377.5Q87,309,95,252.5Q103,196,115,117Q127,38,202,67Q277,96,329.5,117.5Q382,139,398,194.5Q414,250,414,318.5Z;
+                  
+                  M393,304.5Q380,359,329,385Q278,411,221,404.5Q164,398,116.5,357Q69,316,67,249.5Q65,183,108,130.5Q151,78,221.5,46Q292,14,341,73Q390,132,398,191Q406,250,393,304.5Z;
+                  
+                  M392.5,300.5Q371,351,327.5,396Q284,441,216,434Q148,427,126,365Q104,303,102,249Q100,195,115.5,119.5Q131,44,208.5,46Q286,48,343,86Q400,124,407,187Q414,250,392.5,300.5Z;
+                  
+                  M448,319Q415,388,346.5,399.5Q278,411,220.5,405.5Q163,400,89.5,367.5Q16,335,55,264Q94,193,124.5,139Q155,85,219,74.5Q283,64,326.5,107Q370,150,425.5,200Q481,250,448,319Z;
+                  
+                  M401.5,314Q402,378,340,392.5Q278,407,209,424Q140,441,89,384Q38,327,55.5,256.5Q73,186,124,153Q175,120,233.5,66.5Q292,13,352,63.5Q412,114,406.5,182Q401,250,401.5,314Z"
+                ></animate>
+              </path>
+            </g>
+          </svg>
+        </div>
+        <div class="blob">
+          <svg
+            viewBox="-70 0 800 600"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="100%"
+            id="blobSvg"
+          >
+            <g transform="translate(87, 13)">
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color: rgb(254, 0, 242)"></stop>
+                  <stop
+                    offset="100%"
+                    style="stop-color: rgb(251, 2, 128)"
+                  ></stop>
+                </linearGradient>
+              </defs>
+              <path fill="url(#gradient)">
+                <animate
+                  attributeName="d"
+                  dur="7000ms"
+                  repeatCount="indefinite"
+                  values="M401.5,314Q402,378,340,392.5Q278,407,209,424Q140,441,89,384Q38,327,55.5,256.5Q73,186,124,153Q175,120,233.5,66.5Q292,13,352,63.5Q412,114,406.5,182Q401,250,401.5,314Z;
+
+                  M414,318.5Q414,387,348,408Q282,429,209.5,437.5Q137,446,112,377.5Q87,309,95,252.5Q103,196,115,117Q127,38,202,67Q277,96,329.5,117.5Q382,139,398,194.5Q414,250,414,318.5Z;
+                  
+                  M393,304.5Q380,359,329,385Q278,411,221,404.5Q164,398,116.5,357Q69,316,67,249.5Q65,183,108,130.5Q151,78,221.5,46Q292,14,341,73Q390,132,398,191Q406,250,393,304.5Z;
+                  
+                  M392.5,300.5Q371,351,327.5,396Q284,441,216,434Q148,427,126,365Q104,303,102,249Q100,195,115.5,119.5Q131,44,208.5,46Q286,48,343,86Q400,124,407,187Q414,250,392.5,300.5Z;
+                  
+                  M448,319Q415,388,346.5,399.5Q278,411,220.5,405.5Q163,400,89.5,367.5Q16,335,55,264Q94,193,124.5,139Q155,85,219,74.5Q283,64,326.5,107Q370,150,425.5,200Q481,250,448,319Z;
+                  
+                  M401.5,314Q402,378,340,392.5Q278,407,209,424Q140,441,89,384Q38,327,55.5,256.5Q73,186,124,153Q175,120,233.5,66.5Q292,13,352,63.5Q412,114,406.5,182Q401,250,401.5,314Z"
+                ></animate>
+              </path>
+            </g>
+          </svg>
+        </div>
+      </section>
     </header>
-    <div class="container">{% block content %} {% endblock %}</div>
   </body>
 </html>
