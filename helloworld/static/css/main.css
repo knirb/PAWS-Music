@@ -18,6 +18,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
+  background-color: black;
 }
 
 .blob-container {
@@ -31,7 +32,7 @@ body {
 
 .blob {
   position: absolute;
-  width: 100%;
+  width: 90%;
 }
 
 .blob:nth-child(2) {
