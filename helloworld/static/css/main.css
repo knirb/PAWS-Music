@@ -17,7 +17,6 @@ body {
   font-family: libre-light;
   margin: 0;
   width: 100vw;
-  height: 100vh;
   background-color: black;
   color: white;
 }
@@ -96,6 +95,9 @@ li {
 
 .playlist {
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: none;
   justify-content: center;
   align-items: center;
   max-width: 400px;
