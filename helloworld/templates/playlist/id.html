@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script defer>
+      // Get the form
+      document.addEventListener("DOMContentLoaded", () => {
+        let form = document.getElementById("add-song");
+        // Get all field data from the form
+        // returns a FormData object
+        const onSubmit = (e) => {
+          e.preventDefault();
+          let form = document.getElementById("add-song");
+          let data = new FormData(form);
+          fetch("/playlist/{{playlist.PlaylistID}}", {
+            body: data,
+            method: "put",
+          });
+        };
+
+        form.addEventListener("submit", onSubmit);
+      });
+    </script>
+  </head>
+  <body>
+    {% if playlist.Title %}
+    <h3>{{playlist.Title}}</h3>
+    {% if playlist.Songs %} {% for song in playlist.Songs %} {{ song }} {%
+    endfor %} {% endif %} {% endif %}
+    <div>
+      <form id="add-song" onsubmit="submit">
+        <input type="text" id="id" name="id" />
+        <input type="text" id="songTitle" name="songTitle" />
+        <input type="text" id="artist" name="artist" />
+        <input type="text" id="link" name="link" />
+        <button type="submit">Create</button>
+      </form>
+    </div>
+  </body>
+</html>

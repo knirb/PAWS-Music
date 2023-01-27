@@ -15,10 +15,10 @@ phases:
 
 artifacts:
   files:
-    - 'template.yml'
-    - 'scripts/**/*'
-    - 'helloworld/**/*.py'
-    - 'appspec.yml'
-    - 'requirements.txt'
-    - 'setup.py'
-    - 'template-configuration.json'
+    - "template.yml"
+    - "scripts/**/*"
+    - "helloworld/**/*.py"
+    - "appspec.yml"
+    - "requirements.txt"
+    - "setup.py"
+    - "template-configuration.json"
