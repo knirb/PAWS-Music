@@ -1,7 +1,6 @@
 #!flask/bin/python
 import json
-from flask import Flask, request, render_template
-from requests import Response
+from flask import Flask, request, render_template, Response
 from helloworld import playlist, songs
 from helloworld.flaskrun import flaskrun
 import os
@@ -19,8 +18,6 @@ app.register_blueprint(songs.bp)
 def get_song():
     search_term = request.form['song_name']
     return Response(json.dumps({'Output': 'Hello World'}), mimetype='application/json', status=200)
-
-
 
 @app.route('/form')
 def renderform():

@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request
+import json
+from flask import Blueprint, render_template, request, Response
 from helloworld import awscontroller
 bp = Blueprint('playlist', __name__, url_prefix='/playlist')
 import string
@@ -7,7 +8,6 @@ import random
 @bp.route('/', methods=['GET'])
 def home():
     items = awscontroller.get_playlists()['Items']
-    print(items)
     return render_template('playlist/index.html', items = items)
 
 
@@ -31,21 +31,24 @@ def new_playlist_form():
 def specific(id):
     try:
         playlist = awscontroller.get_playlist(id)['Item']
-        print(playlist)
         return render_template('playlist/id.html', playlist = playlist)
     except:
         return render_template('500.html')
 
 
-@bp.route('/<playlistId>', methods=['PUT'])
+@bp.route('/add-song/<playlistId>', methods=['PUT'])
 def add_song(playlistId):
     try:
         id=request.form['id']
         songTitle=request.form['songTitle']
         artist=request.form['artist']
         link=request.form['link']
-        playlist = awscontroller.add_song(id, songTitle, artist, link, playlistId)
-        print('Här printar vi svaret' + playlist)
-        return render_template('playlist/id.html', playlist = playlist)
+        songs = awscontroller.get_playlist(id)['Item']['Songs']
+        awscontroller.add_song(id, songTitle, artist, link, playlistId, songs)
     except:
         return render_template('500.html')
+
+@bp.route('/delete/<id>', methods=['DELETE'])
+def delete_playlist(id):
+    awscontroller.delete_playlist(id)
+    return Response(json.dumps({'Output': 'Kingen'}), mimetype='application/json', status=200)
