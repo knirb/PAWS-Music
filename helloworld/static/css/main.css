@@ -7,17 +7,30 @@
   src: url(./LibreFranklin-Light.ttf);
 }
 
-body {
+* {
   color: black;
   font-family: libre-light;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
-.nav-container {
+.blob-container {
+  position: relative;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 40px;
+  background-color: black;
+  height: 100vh;
+}
+
+.blob {
+  position: absolute;
+  width: 100%;
+}
+
+.blob:nth-child(2) {
+  filter: blur(50px);
 }
 
 .menu {
@@ -27,9 +40,25 @@ body {
   align-items: center;
   padding: 0;
   margin: 0;
+  color: black;
 }
 
 .logo {
+  display: flex;
+  flex-direction: column;
+  font-family: libre;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
+  z-index: 3;
+  max-height: 300px;
+}
+
+.h1 {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
   font-family: libre;
 }
 
