@@ -5,27 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <script defer>
-    // Get the form
-    document.addEventListener("DOMContentLoaded", () => {
-      let form = document.getElementById("new-playlist");
-
-      // Get all field data from the form
-      // returns a FormData object
-      const onSubmit = (e) => {
-        e.preventDefault();
+    <script defer>
+      // Get the form
+      document.addEventListener("DOMContentLoaded", () => {
         let form = document.getElementById("new-playlist");
-        let data = new FormData(form);
-        fetch("/playlist/new", {
-          body: data,
-          method: "post",
-        });
-      };
 
-      form.addEventListener("submit", onSubmit);
-    });
-  </script>
+        // Get all field data from the form
+        // returns a FormData object
+        const onSubmit = (e) => {
+          e.preventDefault();
+          let form = document.getElementById("new-playlist");
+          let data = new FormData(form);
+          fetch("/playlist/new", {
+            body: data,
+            method: "post",
+          });
+        };
+
+        form.addEventListener("submit", onSubmit);
+      });
+    </script>
+  </head>
   <body>
     <form id="new-playlist" onsubmit="submit">
       <input type="text" id="id" name="id" />
