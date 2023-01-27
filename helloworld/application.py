@@ -1,9 +1,9 @@
 #!flask/bin/python
+import json
 from flask import Flask, request, render_template
-import playlist
-import songs
+from requests import Response
+from helloworld import playlist, songs
 from helloworld.flaskrun import flaskrun
-import spotifycontroller
 import os
 
 print(os.getenv("SPOTIPY_CLIENT_ID"))
@@ -20,7 +20,9 @@ app.register_blueprint(songs.bp)
 @app.route('/get-song', methods=['POST'])
 def get_song():
     search_term = request.form['song_name']
-    return spotifycontroller.get_song(search_term)
+    return Response(json.dumps({'Output': 'Hello World'}), mimetype='application/json', status=200)
+
+
 
 @app.route('/form')
 def renderform():

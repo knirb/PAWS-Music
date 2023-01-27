@@ -12,8 +12,12 @@
       {% block content %} {% for playlist in items %} {% if playlist.Title %}
 
       <h3>{{playlist.Title}}</h3>
-      {% if playlist.Songs %} {% for song in playlist.Songs %} {{ song.Title }}
-      {% endfor %} {% endif %} {% endif %} {% endfor %}
+      {% if playlist.Songs %} {% for song in playlist.Songs %} {{ playlist.Songs
+      }} {% endfor %} {% endif %} {% endif %}
+      <div>
+        <a href="/playlist/{{playlist.PlaylistID}}">Edit playlist</a>
+      </div>
+      {% endfor %}
     </div>
     {% endblock %}
   </body>

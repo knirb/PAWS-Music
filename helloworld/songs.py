@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-import awscontroller
+from helloworld import awscontroller
 bp = Blueprint('songs', __name__, url_prefix='/songs')
 
 @bp.route('/', methods=['GET'])
