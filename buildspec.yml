@@ -18,6 +18,8 @@ artifacts:
     - "template.yml"
     - "scripts/**/*"
     - "helloworld/**/*.py"
+    - "helloworld/templates/*"
+    - "helloworld/static/*"
     - "appspec.yml"
     - "requirements.txt"
     - "setup.py"
