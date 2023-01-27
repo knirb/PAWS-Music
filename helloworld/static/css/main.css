@@ -34,7 +34,7 @@ body {
 
 .blob {
   position: absolute;
-  width: 100%;
+  width: 90%;
 }
 
 .blob:nth-child(2) {
@@ -61,6 +61,16 @@ body {
   row-gap: 10px;
   z-index: 3;
   max-height: 300px;
+}
+
+.logo-page-header {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffff;
+  padding-top: 30px;
 }
 
 .h1 {

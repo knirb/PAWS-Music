@@ -4,38 +4,55 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
     <title>Document</title>
   </head>
   <body>
-    <div class="playlist">      
-      {% for playlist in items %} {% if playlist.Title %}
-      <h3>{{playlist.Title}}</h3>
-        {% if playlist.Songs %} 
-          {% for song in playlist.Songs %}
-            <div class="song-wrapper">
-              <div class="title">
-                {% if song.Title %}<b>{{ song.Title}}</b> {% endif %}
-                {% if song.Artist %}<i>{{ song.Artist }}</i> {% endif %}
-              </div>
-              {% if song.Link %}
-              <div>
-                <iframe
-                  style="border-radius: 12px"
-                  src="{{song.Link}}"
-                  width="100%"
-                  height="152"
-                  frameborder="0"
-                  allowfullscreen=""
-                  allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  loading="lazy"
-                ></iframe>
-              </div> 
-              {% endif %}
-          {% endfor %}
-        {% endif %} 
-      {% endif %}
-      <div>
-        <a href="/playlist/{{playlist.PlaylistID}}">Edit playlist</a>
+    <div class="logo-page-header">
+      <img src="../static/images/pawsLogoWhite.svg" alt="Paws logo" />
+      <h1 class="h1">PAWS</h1>
+    </div>
+    <div class="playlist">
+     {% for playlist in items %}
+      <div id="playlist-{{playlist.PlaylistID}}">
+        {% if playlist.Title %}
+
+        <h3>{{playlist.Title}}</h3>
+        {% if playlist.Songs %} {% for song in playlist.Songs %} {{
+        playlist.Songs }} {% endfor %} {% endif %} {% endif %}
+        <div>
+          <a href="/playlist/{{playlist.PlaylistID}}">Edit playlist</a>
+        </div>
+        <div>
+          <script defer>
+            // Get the form
+
+            // Get all field data from the form
+            // returns a FormData object
+            document.addEventListener("DOMContentLoaded", async () => {
+              await document
+                .getElementById("button-{{playlist.PlaylistID}}")
+                .addEventListener("click", (e) => {
+                  e.preventDefault();
+                  fetch("/playlist/delete/{{playlist.PlaylistID}}", {
+                    method: "DELETE",
+                  });
+                  document
+                    .getElementById("playlist-{{playlist.PlaylistID}}")
+                    .remove();
+                });
+            });
+          </script>
+          <button
+            id="button-{{playlist.PlaylistID}}"
+            data-id="{{ playlist.PlaylistID }}"
+          >
+            Delete playlist
+          </button>
+        </div>
       </div>
       {% endfor %}
     </div>

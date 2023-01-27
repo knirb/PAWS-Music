@@ -24,13 +24,21 @@ def get_playlist(id):
         }
     )
 
-def add_song(songId, title, artist, link, playlistId):
+def add_song(songId, title, artist, link, playlistId, songs):
     return dynamo_client.Table('Playlists').update_item(
         Key = {
             'PlaylistID': playlistId,
         },
         UpdateExpression='SET Songs = :val1',
         ExpressionAttributeValues={
-        ':val1': [{'SongID': songId, 'Title': title, 'Artist': artist, 'Link': link}]
+        ':val1': songs.append({'SongID': songId, 'Title': title, 'Artist': artist, 'Link': link})
     }
+    
+    )
+
+def delete_playlist(id):
+    return dynamo_client.Table('Playlists').delete_item(
+        Key ={
+            'PlaylistID': id,
+        }
     )
