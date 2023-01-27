@@ -61,6 +61,16 @@ body {
   max-height: 300px;
 }
 
+.logo-page-header {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffff;
+  padding-top: 30px;
+}
+
 .h1 {
   display: flex;
   justify-self: center;
