@@ -37,15 +37,13 @@ def specific(id):
         return render_template('500.html')
 
 
-@bp.route('/<playlistId>', methods=['PUT'])
+@bp.route('/add-song/<playlistId>', methods=['PUT'])
 def add_song(playlistId):
     try:
         id=request.form['id']
         songTitle=request.form['songTitle']
         artist=request.form['artist']
         link=request.form['link']
-        playlist = awscontroller.add_song(id, songTitle, artist, link, playlistId)
-        print('Här printar vi svaret' + playlist)
-        return render_template('playlist/id.html', playlist = playlist)
+        awscontroller.add_song(id, songTitle, artist, link, playlistId)
     except:
         return render_template('500.html')

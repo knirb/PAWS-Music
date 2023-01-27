@@ -7,18 +7,37 @@
     <title>Document</title>
   </head>
   <body>
-    {% extends "layout.html" %}
-    <div class="playlist">
-      {% block content %} {% for playlist in items %} {% if playlist.Title %}
-
+    <div class="playlist">      
+      {% for playlist in items %} {% if playlist.Title %}
       <h3>{{playlist.Title}}</h3>
-      {% if playlist.Songs %} {% for song in playlist.Songs %} {{ playlist.Songs
-      }} {% endfor %} {% endif %} {% endif %}
+        {% if playlist.Songs %} 
+          {% for song in playlist.Songs %}
+            <div class="song-wrapper">
+              <div class="title">
+                {% if song.Title %}<b>{{ song.Title}}</b> {% endif %}
+                {% if song.Artist %}<i>{{ song.Artist }}</i> {% endif %}
+              </div>
+              {% if song.Link %}
+              <div>
+                <iframe
+                  style="border-radius: 12px"
+                  src="{{song.Link}}"
+                  width="100%"
+                  height="152"
+                  frameborder="0"
+                  allowfullscreen=""
+                  allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                ></iframe>
+              </div> 
+              {% endif %}
+          {% endfor %}
+        {% endif %} 
+      {% endif %}
       <div>
         <a href="/playlist/{{playlist.PlaylistID}}">Edit playlist</a>
       </div>
       {% endfor %}
     </div>
-    {% endblock %}
   </body>
 </html>

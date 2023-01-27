@@ -20,8 +20,6 @@ def get_song():
     search_term = request.form['song_name']
     return Response(json.dumps({'Output': 'Hello World'}), mimetype='application/json', status=200)
 
-
-
 @app.route('/form')
 def renderform():
     return render_template('form.html')            

@@ -1,4 +1,5 @@
 import boto3
+import sys
 
 dynamo_client = boto3.resource('dynamodb')
 
@@ -17,7 +18,6 @@ def create_playlist(id, name):
     )
 
 def get_playlist(id): 
-    print(id)
     return dynamo_client.Table('Playlists').get_item(
         Key={
             'PlaylistID': id
@@ -25,7 +25,6 @@ def get_playlist(id):
     )
 
 def add_song(songId, title, artist, link, playlistId):
-    print(songId, title, artist, link, playlistId)
     return dynamo_client.Table('Playlists').update_item(
         Key = {
             'PlaylistID': playlistId,
