@@ -61,6 +61,11 @@ body {
   max-height: 300px;
 }
 
+h1 {
+  font-size: 40px;
+  font-family: libre;
+}
+
 .logo-page-header {
   display: flex;
   width: 100vw;
