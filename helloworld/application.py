@@ -5,8 +5,6 @@ from helloworld import playlist, songs
 from helloworld.flaskrun import flaskrun
 import os
 
-print(os.getenv("SPOTIPY_CLIENT_ID"))
-
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
